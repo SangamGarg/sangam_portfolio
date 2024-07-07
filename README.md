@@ -1,4 +1,4 @@
-#Sangam's Portfolio App
+Sangam's Portfolio App
 
 Welcome to the repository for Sangam Garg's Android Portfolio Application. This app is designed to showcase my professional journey, skills, experiences, and projects in a sleek and intuitive manner.
 
