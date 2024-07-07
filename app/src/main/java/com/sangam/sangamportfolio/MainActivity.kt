@@ -18,13 +18,10 @@ import com.sangam.sangamportfolio.projects.FlutterActivity
 import com.sangam.sangamportfolio.projects.MernActivity
 
 class MainActivity : AppCompatActivity() {
-    private val binding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
-
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         window.statusBarColor = Color.WHITE
         binding.cvLayout.image.setImageResource(R.drawable.cv)
