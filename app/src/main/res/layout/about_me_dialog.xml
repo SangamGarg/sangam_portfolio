@@ -24,11 +24,12 @@
             android:id="@+id/textViewAbout_me"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:justificationMode="inter_word"
             android:fontFamily="@font/aref_ruqaa"
             android:textColor="@color/black"
             android:gravity="center"
             android:padding="10dp"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
 

@@ -17,7 +17,7 @@ class ShowExtraCertificateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        window.statusBarColor = Color.TRANSPARENT
+        window.statusBarColor = Color.WHITE
 
         binding.netball.setOnClickListener {
             dialogBox(

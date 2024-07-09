@@ -7,12 +7,15 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Size
 import android.view.View
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.sangam.sangamportfolio.R
 import com.sangam.sangamportfolio.RawResourcesBitmapProvider
+import com.sangam.sangamportfolio.app_utils.DownloadFile
+import com.sangam.sangamportfolio.app_utils.HideStatusBarUtil
 import com.shevelev.page_turning_lib.page_curling.CurlView
 import com.shevelev.page_turning_lib.page_curling.CurlViewEventsHandler
 import com.shevelev.page_turning_lib.page_curling.textures_manager.PageLoadingEventsHandler
@@ -23,23 +26,40 @@ class CVActivity : AppCompatActivity() {
     private var curlView: CurlView? = null
 
     private var currentPageIndex: Int? = null
-    lateinit var id1: String
+    private lateinit var id1: String
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.statusBarColor = Color.TRANSPARENT
+        HideStatusBarUtil.hideStatusBar(this)
+        window.statusBarColor = Color.WHITE
         setContentView(R.layout.activity_cvactivity)
         val textView = findViewById<TextView>(R.id.textViewCR)
+        val imageView = findViewById<ImageView>(R.id.downlaod)
         currentPageIndex =
             savedInstanceState?.getInt(CURRENT_PAGE) ?: intent.getIntExtra(START_PAGE, 0)
         id1 = intent.getStringExtra("ID") ?: ""
 
-        if (id1 == "0") {
-            textView.text = "CV"
-        } else if (id1 == "1") {
-            textView.text = "RESUME"
-        } else {
-            textView.text = "SKETCHES"
+        when (id1) {
+            "0" -> {
+                textView.text = "CV"
+
+                imageView.setOnClickListener {
+                    DownloadFile.downloadFile(this, R.raw.sangamcv, "sangamcv.pdf")
+                }
+            }
+
+            "1" -> {
+                textView.text = "RESUME"
+
+                imageView.setOnClickListener {
+                    DownloadFile.downloadFile(this, R.raw.sangamresume, "sangamresume.pdf")
+                }
+            }
+
+            else -> {
+                textView.text = "SKETCHES"
+                imageView.visibility = View.GONE
+            }
         }
         curlView = (findViewById<View>(R.id.pageCurl) as? CurlView)?.also {
             it.setBitmapProvider(RawResourcesBitmapProvider(this, id1))
@@ -63,9 +83,7 @@ class CVActivity : AppCompatActivity() {
                 override fun onHotAreaPressed(areaId: Int) {
                     it.setCurrentPageIndex(2)
                     Toast.makeText(
-                        this@CVActivity,
-                        "We've moved to the page with index 2",
-                        Toast.LENGTH_SHORT
+                        this@CVActivity, "We've moved to the page with index 2", Toast.LENGTH_SHORT
                     ).show()
                 }
             })
@@ -110,9 +128,9 @@ class CVActivity : AppCompatActivity() {
         private const val CURRENT_PAGE = "CURRENT_PAGE"
 
         fun start(parentActivity: Activity, startPage: Int, id: String) {
-            val intent = Intent(parentActivity, CVActivity::class.java)
-                .putExtra(START_PAGE, startPage)
-                .putExtra("ID", id) // Pass the 'id' parameter as an extra
+            val intent =
+                Intent(parentActivity, CVActivity::class.java).putExtra(START_PAGE, startPage)
+                    .putExtra("ID", id) // Pass the 'id' parameter as an extra
             parentActivity.startActivity(intent)
         }
     }

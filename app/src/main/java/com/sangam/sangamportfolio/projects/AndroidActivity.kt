@@ -19,7 +19,7 @@ class AndroidActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        window.statusBarColor = Color.TRANSPARENT
+        window.statusBarColor = Color.WHITE
         binding.arappLayout.apply {
             image.setImageResource(R.drawable.ar)
             textName.text = "AR APP"
@@ -41,18 +41,18 @@ class AndroidActivity : AppCompatActivity() {
             }
         }
         binding.fitnessLayout.apply {
-            image.setImageResource(R.drawable.fitness)
-            textName.text = "FITNESS ZONE"
+            image.setImageResource(R.drawable.muscleplayicon)
+            textName.text = "FITNESS APPLICATION (MUSCLE PLAY)"
             cardLayout.setOnClickListener {
                 dialogBox(
                     getText(R.string.fitness).toString(),
-                    "https://github.com/SangamGarg/FitnessApp"
+                    "https://github.com/SangamGarg/MusclePlayApp"
                 )
             }
         }
         binding.quonoteLayout.apply {
             image.setImageResource(R.drawable.quonote)
-            textName.text = "QUONOTE"
+            textName.text = "QUONOTE (PERSONAL PROJECT)"
             cardLayout.setOnClickListener {
                 dialogBox(
                     getText(R.string.quonote).toString(),
@@ -61,9 +61,20 @@ class AndroidActivity : AppCompatActivity() {
             }
         }
 
+        binding.isgLayout.apply {
+            image.setImageResource(R.drawable.igllogo)
+            textName.text = "INDIAN STUDY GROUP (FREELANCING WORK)"
+            cardLayout.setOnClickListener {
+                dialogBox(
+                    getString(R.string.isg),
+                    "https://play.google.com/store/apps/details?id=com.indianstudygroup"
+                )
+            }
+        }
+
     }
 
-    fun dialogBox(msg: String, string: String) {
+    private fun dialogBox(msg: String, string: String) {
         val dialog = AlertDialog.Builder(this)
         val view = layoutInflater.inflate(R.layout.projects_layout_dialog, null)
         dialog.setView(view)

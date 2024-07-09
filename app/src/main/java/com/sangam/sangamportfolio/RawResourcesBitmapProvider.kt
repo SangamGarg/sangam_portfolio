@@ -13,24 +13,28 @@ class RawResourcesBitmapProvider(private val context: Context, var id: String) :
 
     init {
         // Conditionally set the bitmapIds based on the value of id
-        if (id == "0") {
-            bitmapIds = listOf(R.raw.cv1, R.raw.cv2, R.raw.cv3)
-        } else if (id == "1") {
-            bitmapIds = listOf(R.raw.sangamresume)
-        } else {
-            bitmapIds = listOf(
-                R.raw.sketch1,
-                R.raw.sketch2,
-                R.raw.sketch3,
-                R.raw.sketch4,
-                R.raw.sketch5,
-                R.raw.sketch6,
-                R.raw.sketch7,
-                R.raw.sketch8,
-                R.raw.sketch9,
-                R.raw.sketch10,
-                R.raw.sketch11
-            )
+        when (id) {
+            "0" -> {
+                bitmapIds = listOf(R.raw.cv1, R.raw.cv2, R.raw.cv3)
+            }
+            "1" -> {
+                bitmapIds = listOf(R.raw.sangamresume)
+            }
+            else -> {
+                bitmapIds = listOf(
+                    R.raw.sketch1,
+                    R.raw.sketch2,
+                    R.raw.sketch3,
+                    R.raw.sketch4,
+                    R.raw.sketch5,
+                    R.raw.sketch6,
+                    R.raw.sketch7,
+                    R.raw.sketch8,
+                    R.raw.sketch9,
+                    R.raw.sketch10,
+                    R.raw.sketch11
+                )
+            }
         }
     }
 

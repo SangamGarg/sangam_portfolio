@@ -5,8 +5,24 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#120D26</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color1">#F255F7</color>
     <color name="color2">#F58CF8</color>
+    <color name="drawable_color">#747688</color>
+    <color name="gray">#838383</color>
+    <color name="blue1">#5669FF</color>
+    <color name="blue2">#6374FF</color>
+    <color name="blue_second">#E6E6FB</color>
+    <color name="bluedark">#5B74FB</color>
+    <color name="red">#FB5C5C</color>
+    <color name="red_logout">#DF0000</color>
+    <color name="green">#3EBF43</color>
+    <color name="yellow">#FFD33C</color>
+
+    <color name="signinbackground">#2f3133</color>
+    <color name="textViewColor">#DDDCDC</color>
+    <color name="stroke_color">#86878D</color>
+    <color name="gray_text_color">#7A7A7A</color>
+    <color name="black1">#000000</color>
 </resources>

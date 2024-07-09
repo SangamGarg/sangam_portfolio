@@ -18,7 +18,7 @@ class ShowCertificateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        window.statusBarColor = Color.TRANSPARENT
+        window.statusBarColor = Color.WHITE
 
         binding.androidC.setOnClickListener {
             dialogBox(
@@ -55,11 +55,11 @@ class ShowCertificateActivity : AppCompatActivity() {
         binding.mernC.setOnClickListener {
             dialogBox(
                 "It was a one month internship program where I was trained in MERN and henceforth given a project of my own choice to be completed within deadline in MERN .",
-                R.drawable.mern
+                R.drawable.mernc
             )
         }
         binding.tpcC.setOnClickListener {
-            dialogBox("This was a 80 hrs Training", R.drawable.mern)
+            dialogBox("This was a 80 hrs Training", R.drawable.tpcglobal)
         }
         binding.flutterC.setOnClickListener {
             dialogBox(

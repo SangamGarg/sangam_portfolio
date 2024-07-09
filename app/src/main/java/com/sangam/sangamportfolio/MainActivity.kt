@@ -11,11 +11,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.sangam.sangamportfolio.CV.CVActivity
+import com.sangam.sangamportfolio.app_utils.HideStatusBarUtil
+import com.sangam.sangamportfolio.app_utils.IntentUtil
 import com.sangam.sangamportfolio.certificate.ShowCertificateActivity
 import com.sangam.sangamportfolio.databinding.ActivityMainBinding
 import com.sangam.sangamportfolio.projects.AndroidActivity
 import com.sangam.sangamportfolio.projects.FlutterActivity
 import com.sangam.sangamportfolio.projects.MernActivity
+import com.sangam.sangamportfolio.work_experience.WorkExperienceActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.statusBarColor = Color.WHITE
+        HideStatusBarUtil.hideStatusBar(this)
         binding.cvLayout.image.setImageResource(R.drawable.cv)
         binding.cvLayout.textName.text = "CV"
         binding.cvLayout.cardLayout.setOnClickListener {
             CVActivity.start(this@MainActivity, 0, "0")
-            Toast.makeText(this, "SWIPE TO SEE MORE", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "SWIPE TO SEE MORE", Toast.LENGTH_LONG).show()
         }
 
         binding.resumeLayout.image.setImageResource(R.drawable.resume)
@@ -36,6 +39,14 @@ class MainActivity : AppCompatActivity() {
         binding.resumeLayout.cardLayout.setOnClickListener {
             CVActivity.start(this@MainActivity, 0, "1")
 
+        }
+
+        binding.internLayout.apply {
+            image.setImageResource(R.drawable.internship)
+            textName.text = "Internships"
+            cardLayout.setOnClickListener {
+                IntentUtil.startIntent(this@MainActivity, WorkExperienceActivity())
+            }
         }
 
         binding.githubLayout.image.setImageResource(R.drawable.github)
@@ -76,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         binding.androidLayout.apply {
             image.setImageResource(R.drawable.android)
             cardLayout.setOnClickListener {
-                intentActivity(this@MainActivity, AndroidActivity())
+                IntentUtil.startIntent(this@MainActivity, AndroidActivity())
             }
             textName.text = "ANDROID"
         }
@@ -84,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         binding.flutterLayout.apply {
             image.setImageResource(R.drawable.flutter)
             cardLayout.setOnClickListener {
-                intentActivity(this@MainActivity, FlutterActivity())
+                IntentUtil.startIntent(this@MainActivity, FlutterActivity())
             }
             textName.text = "FLUTTER"
         }
@@ -92,22 +103,27 @@ class MainActivity : AppCompatActivity() {
         binding.mernLayout.apply {
             image.setImageResource(R.drawable.mern)
             cardLayout.setOnClickListener {
-                intentActivity(this@MainActivity, MernActivity())
+                IntentUtil.startIntent(this@MainActivity, MernActivity())
             }
             textName.text = "MERN"
         }
+
+
+
+
+
         binding.certificateLayout.apply {
             image.setImageResource(R.drawable.education)
             textName.text = "TRAININGS CERTIFICATES"
             cardLayout.setOnClickListener {
-                intentActivity(this@MainActivity, ShowCertificateActivity())
+                IntentUtil.startIntent(this@MainActivity, ShowCertificateActivity())
             }
         }
         binding.achievementsLayout.apply {
             image.setImageResource(R.drawable.achievement)
             textName.text = "ACHIEVEMENTS"
             cardLayout.setOnClickListener {
-                intentActivity(this@MainActivity, ShowExtraCertificateActivity())
+                IntentUtil.startIntent(this@MainActivity, ShowExtraCertificateActivity())
             }
         }
         binding.sketchLayout.apply {
@@ -116,9 +132,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.sketchLayout.cardLayout.setOnClickListener {
             CVActivity.start(this@MainActivity, 0, "2")
-            Toast.makeText(this, "SWIPE TO SEE MORE", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "SWIPE TO SEE MORE", Toast.LENGTH_LONG).show()
         }
-        binding.question.setOnClickListener {
+        binding.more.setOnClickListener {
             val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
             val view = layoutInflater.inflate(R.layout.about_me_dialog, null)
             dialog.setView(view)
@@ -127,9 +143,22 @@ class MainActivity : AppCompatActivity() {
             dialog.create().show()
         }
 
+        binding.phone.setOnClickListener {
+            val phoneNumber = "tel:7210581614"
+            val callIntent = Intent(Intent.ACTION_DIAL).apply {
+                data = Uri.parse(phoneNumber)
+            }
+            startActivity(callIntent)
+        }
+
+        binding.mail.setOnClickListener {
+            val intent = Intent(this, EmailActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
-    fun openIntentWeb(appPackageName: String, webUrl: String) {
+    private fun openIntentWeb(appPackageName: String, webUrl: String) {
         try {
             val intent = packageManager.getLaunchIntentForPackage(appPackageName)
             if (intent != null) {
@@ -146,18 +175,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun intentActivity(context: Context, activity: Activity) {
-        val intent = Intent(context, activity::class.java)
-        startActivity(intent)
-    }
-
-    override fun onBackPressed() {
-//        if (binding.resumeShowLayout.visibility == View.VISIBLE) {
-//            binding.resumeShowLayout.visibility = View.GONE
-//        } else {
-        super.onBackPressed()
-        finishAffinity()
-//        }
-    }
 
 }

@@ -1,13 +1,18 @@
 <resources>
-    <string name="app_name">SangamPortfolio</string>
-    <string name="about_me">Highly Motivated and Passionate Engineer with experience in developing efficient Android Application and seeking for an opportunity to apply my skills and knowledge in building innovative mobile applications. Eager to contribute to a dynamic team, gain practical experience, and further develop my expertise in developing user-friendly and powerful applications.
-My academic background, coupled with internships and projects, has equipped me with valuable knowledge in the field of Technology.
-I am a quick learner, detail-oriented impending engineer and going to complete my graduation in 2024 with a dream to explore IT world with a new ideas and values.</string>
+    <string name="app_name">Sangam Portfolio</string>
+    <string name="about_me">
+    Passionate and results-oriented software engineer with a solid background in computer science with a passion for mobile application development and seeking for an opportunity to apply my skills and knowledge.\n
+    Eager to contribute to a dynamic team, gain practical experience, and further develop my expertise. I have proficiency in a range of programming languages including Kotlin, Java, and C.\n
+    My academic background, coupled with internships, freelancing and projects, has equipped me with valuable knowledge in the field of Technology.\n
+    I am a quick learner, detail-oriented impending engineer and completed my graduation in 2024 with a dream to explore IT world with a new ideas and values.\n
+    \n
+    Contact: 7210581614\n
+    Email: sangamgarg17@gmail.com
+</string>
     <string name="quonote"> It is a simple and elegant app that allows users to write, save, and share their favorite quotes. You can also explore a vast collection of quotes from different categories and also download various images. You can add widgets to your home screen with your favorite quotes. Inspirational quotes at your fingertips. It helps to increase productivity.
  This app is built using Android Studio IDE, Kotlin for the backend, Retrofit for API calls, Firebase for data storage and authentication, and XML for layout design. Lottie animations are used to add delightful animations to the user interface.
  I created and published this project on the Google Play Store to enhance my Android development skills and gain real-world experience in app deployment. This hands-on experience has deepened my understanding of Android app development and its practical aspects, enriching my knowledge and skills in the field</string>
-    <string name="fitness">It is a comprehensive application that calculates daily calorie requirements, suggests customized workouts based on user\'s fitness level and gender and provides BMI information. Designed to promote health, wellness, enhancing user\'s fitness journey.
- This app is built using Android Studio IDE, Java for the backend, Retrofit for API calls, Local Storage for data storage and authentication, and XML for layout design.</string>
+    <string name="fitness">Developing a fitness application with a comprehensive suite of fitness functionalities. Integrating standard features alongside innovative machine learning (ML) based fitness games, enhancing user engagement and retention. Implementing a personalized fitness chatbot.</string>
     <string name="bmi">This is my first project using flutter.I made this to explore the world of flutter.The "BMI Calculator App using Flutter" is a mobile application designed to help users calculate their Body Mass Index (BMI) quickly and easily. BMI is a measure of body fat based on an individual\'s weight and height. This app empowers users to monitor and understand their BMI, offering insights into their overall health status.</string>
     <string name="ar">This application revolutionizes the way kids visualize and learn things. Utilizing AR, the app displays animated animals, plants ,birds ,etc. with their respective sound and category. which will help kids to visualize the nature in their surrouding.
  This app is built using Android Studio IDE, Kotlin for the backend, Firebase for data storage and authentication, and XML for layout design. Google ARCORE for AR implementation.</string>
@@ -16,5 +21,13 @@ This website permit users to upload pics, upload multimedia content material  or
 It provides ways to Users to interact online with people with similar interests for social purposes  Like, Dislike , Online comments ,digital photographs post submissions are all possible.
 
 </string>
+    <string name="more_about_me"><u>More About Me</u></string>
+    <string name="talentitan"><b>TalenTitan Private Limited (ANDROID DEVELOPER INTERN) (Oct 2023 - Mar 2023) \n
+    Excelled as an Android Developer at TalenTitan Private Limited, integrating external data sources and REST APIs for seamless app functionality, and local databases like ROOM for effective data management. Implemented ads in Android applications to drive revenue.\nResolve software bugs, issues, code optimization, debugging code and ensuring high-quality performance with interactive user interfaces.\n
+Utilized modern Android technologies like MVVM, Retrofit, Kotlin Coroutines, and Kotlin Flows for efficient app development.
+
+
+    </b></string>
+    <string name="isg">"This Android application is designed to streamline the process of booking seats in libraries and gyms, providing users with a convenient and efficient way to manage their reservations. Users can effortlessly book seats, view their upcoming and past schedules, and make secure payments directly through the app. Additionally, the app includes a QR code scanning feature for quick check-ins at gyms and libraries."</string>
 
 </resources>

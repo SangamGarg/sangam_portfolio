@@ -18,7 +18,7 @@ class MernActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        window.statusBarColor = Color.TRANSPARENT
+        window.statusBarColor = Color.WHITE
         binding.bmiLayout.apply {
             image.setImageResource(R.drawable.mernproject)
             textName.text = "SOCIALSPHERE"
