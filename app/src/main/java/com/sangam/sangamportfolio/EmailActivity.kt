@@ -40,16 +40,31 @@ class EmailActivity : AppCompatActivity() {
 
         binding.continueButton.setOnClickListener {
             val emailText = binding.emailEt.text.toString()
+            val nameText = binding.nameEt.text.toString()
+            val senderEmail = binding.mailEt.text.toString()
+
             if (emailText.trim().isEmpty()) {
                 binding.emailEt.error = "Empty Field"
+            } else if (nameText.trim().isEmpty()) {
+                binding.nameEt.error = "Empty Field"
+            } else if (senderEmail.trim().isEmpty()) {
+                binding.mailEt.error = "Empty Field"
             } else {
-                HideKeyboard.hideKeyboard(this,binding.emailEt.windowToken)
+                val text = """
+                    Name        : $nameText
+                    Sender Mail : $senderEmail
+                    Message     : $emailText
+                """.trimIndent()
+
+
+
+                HideKeyboard.hideKeyboard(this, binding.emailEt.windowToken)
                 callSendEmail(
                     EmailRequestModel(
                         "Portfolio Email",
                         From("sangam.portfolio@demomailtrap.com", "Portfolio Mail"),
-                        "Sangam Portfolio Email",
-                        emailText,
+                        nameText,
+                        text,
                         listOf(To("sangamgarg17@gmail.com"))
                     )
                 )

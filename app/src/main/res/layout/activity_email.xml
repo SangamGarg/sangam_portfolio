@@ -74,8 +74,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/mailLayout"
+                android:id="@+id/nameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -85,11 +86,97 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/viewPhone"
+                    android:id="@+id/viewName"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="18dp"
+                    android:src="@drawable/baseline_person_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/drawable_color" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/nameEt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background_2"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Write Your Name Here"
+                    android:inputType="textPersonName"
+                    android:paddingVertical="15dp"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_text_color"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_background_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameLayout">
+
+                <ImageView
+                    android:id="@+id/mailName"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginStart="18dp"
                     android:src="@drawable/baseline_email_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/drawable_color" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mailEt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background_2"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Write Your E-mail Here"
+                    android:inputType="textEmailAddress"
+                    android:paddingVertical="15dp"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_text_color"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_background_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mailLayout">
+
+                <ImageView
+                    android:id="@+id/viewPhone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="18dp"
+                    android:src="@drawable/baseline_message_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -101,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background_2"
                     android:fontFamily="@font/poppins"
-                    android:hint="Write Your Mail Here"
+                    android:hint="Write Your Message Here"
                     android:inputType="textPersonName"
                     android:paddingVertical="15dp"
                     android:paddingStart="50dp"
@@ -130,7 +217,7 @@
                 app:cardUseCompatPadding="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mailLayout"
+                app:layout_constraintTop_toBottomOf="@+id/Layout"
                 app:strokeColor="@color/white"
                 app:strokeWidth="0.1dp">
 

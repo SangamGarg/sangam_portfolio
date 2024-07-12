@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textWelcome"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/paperplane"
+        app:lottie_rawRes="@raw/hello"
         app:lottie_speed="1.5" />
 
     <com.google.android.material.card.MaterialCardView

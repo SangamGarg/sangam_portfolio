@@ -1,9 +1,14 @@
 package com.sangam.sangamportfolio.CV
 
 import android.app.Activity
+import android.app.DownloadManager
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.util.DisplayMetrics
 import android.util.Size
 import android.view.View
@@ -11,7 +16,10 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.sangam.sangamportfolio.R
 import com.sangam.sangamportfolio.RawResourcesBitmapProvider
 import com.sangam.sangamportfolio.app_utils.DownloadFile
@@ -20,6 +28,7 @@ import com.shevelev.page_turning_lib.page_curling.CurlView
 import com.shevelev.page_turning_lib.page_curling.CurlViewEventsHandler
 import com.shevelev.page_turning_lib.page_curling.textures_manager.PageLoadingEventsHandler
 import com.shevelev.page_turning_lib.user_actions_managing.Area
+import java.io.File
 
 
 class CVActivity : AppCompatActivity() {
@@ -27,6 +36,7 @@ class CVActivity : AppCompatActivity() {
 
     private var currentPageIndex: Int? = null
     private lateinit var id1: String
+
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +54,25 @@ class CVActivity : AppCompatActivity() {
                 textView.text = "CV"
 
                 imageView.setOnClickListener {
-                    DownloadFile.downloadFile(this, R.raw.sangamcv, "sangamcv.pdf")
+                    downloadImage2(
+                        this,
+                        "https://firebasestorage.googleapis.com/v0/b/quonote-d5cf8.appspot.com/o/PortfolioImages%2FSANGAMCV.pdf?alt=media&token=2839a0f9-4ccc-458f-89c5-c111e8185a4d",
+                        "Sangam CV"
+                    )
                 }
+
             }
 
             "1" -> {
                 textView.text = "RESUME"
 
                 imageView.setOnClickListener {
-                    DownloadFile.downloadFile(this, R.raw.sangamresume, "sangamresume.pdf")
+
+                    downloadImage(
+                        this,
+                        "https://firebasestorage.googleapis.com/v0/b/quonote-d5cf8.appspot.com/o/PortfolioImages%2FSangamResume.pdf?alt=media&token=ee0eacce-c457-45e1-909f-a53de8dc71c7",
+                        "Sangam Resume"
+                    )
                 }
             }
 
@@ -107,6 +127,46 @@ class CVActivity : AppCompatActivity() {
         val metrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(metrics)
     }
+
+    private fun downloadImage2(context: Context, imageUrl: String, fileName: String) {
+
+        val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+
+        val request = DownloadManager.Request(Uri.parse(imageUrl))
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+        request.setTitle("Sangam CV Download")
+        request.setDescription("Downloading...")
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        request.setDestinationInExternalPublicDir(
+            Environment.DIRECTORY_DOWNLOADS, File.separator + fileName + ".pdf"
+        )
+
+        downloadManager.enqueue(request)
+
+        Toast.makeText(this, "CV Downloaded", Toast.LENGTH_SHORT).show()
+
+    }
+
+
+    private fun downloadImage(context: Context, imageUrl: String, fileName: String) {
+
+        val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+
+        val request = DownloadManager.Request(Uri.parse(imageUrl))
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+        request.setTitle("Sangam Resume Download")
+        request.setDescription("Downloading...")
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        request.setDestinationInExternalPublicDir(
+            Environment.DIRECTORY_DOWNLOADS, File.separator + fileName + ".pdf"
+        )
+
+        downloadManager.enqueue(request)
+
+        Toast.makeText(this, "Resume Downloaded", Toast.LENGTH_SHORT).show()
+
+    }
+
 
     public override fun onPause() {
         super.onPause()
