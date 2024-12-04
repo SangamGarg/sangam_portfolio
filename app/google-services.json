@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "698062197658",
+    "project_id": "sangamportfolio-60a25",
+    "storage_bucket": "sangamportfolio-60a25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698062197658:android:ebfc66f320bb8d49c02023",
+        "android_client_info": {
+          "package_name": "com.sangam.sangamportfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh73oX-Kp-ujk4ahhYoQh00RoDDrvLW2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
