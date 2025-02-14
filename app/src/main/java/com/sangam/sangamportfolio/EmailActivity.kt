@@ -23,6 +23,9 @@ import com.sangam.sangamportfolio.email.To
 class EmailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEmailBinding
     private lateinit var emailViewModel: EmailViewModel
+    private val emailPattern =
+        "[a-zA-Z0-9._%+-]+@(gmail\\.com|yahoo\\.com|outlook\\.com|hotmail\\.com|icloud\\.com|aol\\.com|protonmail\\.com|zoho\\.com|mail\\.com|gmx\\.com|yandex\\.com)"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         emailViewModel = ViewModelProvider(this)[EmailViewModel::class.java]
@@ -39,26 +42,31 @@ class EmailActivity : AppCompatActivity() {
 
 
         binding.continueButton.setOnClickListener {
-            val emailText = binding.emailEt.text.toString()
             val nameText = binding.nameEt.text.toString()
             val senderEmail = binding.mailEt.text.toString()
+            val messageText = binding.messageEt.text.toString()
 
-            if (emailText.trim().isEmpty()) {
-                binding.emailEt.error = "Empty Field"
-            } else if (nameText.trim().isEmpty()) {
+            if (nameText.trim().isEmpty()) {
                 binding.nameEt.error = "Empty Field"
             } else if (senderEmail.trim().isEmpty()) {
                 binding.mailEt.error = "Empty Field"
+            } else if (!senderEmail.matches(emailPattern.toRegex())) {
+                binding.mailEt.error = "Enter Valid Email"
+            } else if (messageText.trim().isEmpty()) {
+                binding.messageEt.error = "Empty Field"
             } else {
                 val text = """
                     Name        : $nameText
                     Sender Mail : $senderEmail
-                    Message     : $emailText
+                    Message     : $messageText
                 """.trimIndent()
 
 
 
-                HideKeyboard.hideKeyboard(this, binding.emailEt.windowToken)
+                HideKeyboard.hideKeyboard(this, binding.messageEt.windowToken)
+                HideKeyboard.hideKeyboard(this, binding.mailEt.windowToken)
+                HideKeyboard.hideKeyboard(this, binding.nameEt.windowToken)
+
                 callSendEmail(
                     EmailRequestModel(
                         "Portfolio Email",

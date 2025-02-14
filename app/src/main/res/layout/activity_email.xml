@@ -183,7 +183,7 @@
                     app:tint="@color/drawable_color" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/emailEt"
+                    android:id="@+id/messageEt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background_2"

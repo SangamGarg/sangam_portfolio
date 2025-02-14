@@ -248,9 +248,20 @@
                         layout="@layout/card_view_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/mediumLayout"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/instaLayout" />
+
+                    <include
+                        android:id="@+id/mediumLayout"
+                        layout="@layout/card_view_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/youtubeLayout" />
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </HorizontalScrollView>

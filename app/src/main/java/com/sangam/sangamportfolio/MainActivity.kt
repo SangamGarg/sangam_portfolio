@@ -84,6 +84,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.mediumLayout?.image?.setImageResource(R.drawable.medium)
+        binding.mediumLayout?.textName?.text = "MEDIUM"
+        binding.mediumLayout?.cardLayout?.setOnClickListener {
+            val appPackageName = "com.medium.android"
+            val webUrl = "https://medium.com/@sangamgarg17"
+            openIntentWeb(appPackageName, webUrl)
+        }
+
         binding.androidLayout.apply {
             image.setImageResource(R.drawable.android)
             cardLayout.setOnClickListener {
