@@ -1,10 +1,7 @@
 package com.sangam.sangamportfolio
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.widget.TextView
@@ -15,6 +12,7 @@ import com.sangam.sangamportfolio.app_utils.HideStatusBarUtil
 import com.sangam.sangamportfolio.app_utils.IntentUtil
 import com.sangam.sangamportfolio.certificate.ShowCertificateActivity
 import com.sangam.sangamportfolio.databinding.ActivityMainBinding
+import com.sangam.sangamportfolio.email.EmailActivity
 import com.sangam.sangamportfolio.projects.AndroidActivity
 import com.sangam.sangamportfolio.projects.FlutterActivity
 import com.sangam.sangamportfolio.projects.MernActivity

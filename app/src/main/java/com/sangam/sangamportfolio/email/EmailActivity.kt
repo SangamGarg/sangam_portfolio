@@ -1,4 +1,4 @@
-package com.sangam.sangamportfolio
+package com.sangam.sangamportfolio.email
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -11,14 +11,11 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.sangam.sangamportfolio.R
 import com.sangam.sangamportfolio.app_utils.HideKeyboard
 import com.sangam.sangamportfolio.app_utils.ToastUtil
 import com.sangam.sangamportfolio.databinding.ActivityEmailBinding
 import com.sangam.sangamportfolio.databinding.ErrorBottomDialogLayoutBinding
-import com.sangam.sangamportfolio.email.EmailRequestModel
-import com.sangam.sangamportfolio.email.EmailViewModel
-import com.sangam.sangamportfolio.email.From
-import com.sangam.sangamportfolio.email.To
 
 class EmailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEmailBinding

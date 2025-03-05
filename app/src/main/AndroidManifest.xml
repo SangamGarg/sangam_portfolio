@@ -20,7 +20,7 @@
             android:name=".work_experience.WorkExperienceActivity"
             android:exported="false" />
         <activity
-            android:name=".EmailActivity"
+            android:name=".email.EmailActivity"
             android:exported="false" />
         <activity
             android:name=".CV.CVActivity"
