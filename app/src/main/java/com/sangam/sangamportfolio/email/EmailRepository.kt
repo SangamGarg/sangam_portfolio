@@ -27,10 +27,12 @@ class EmailRepository {
                 if (response.isSuccessful) {
                     emailResponse.postValue(body!!)
                 } else {
+                    val errorBody = response.errorBody()?.string()
+                    Log.e("emailResponse", "Error: $errorBody")
                     if (response.code() == 404) {
-                        errorMessage.postValue("User not exist please sign up")
+                        errorMessage.postValue("User not exist, please sign up")
                     } else {
-                        errorMessage.postValue(response.errorBody().toString())
+                        errorMessage.postValue("Error: $errorBody")
                     }
                 }
             }

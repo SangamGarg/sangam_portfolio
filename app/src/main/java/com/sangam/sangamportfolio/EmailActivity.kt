@@ -69,8 +69,8 @@ class EmailActivity : AppCompatActivity() {
 
                 callSendEmail(
                     EmailRequestModel(
-                        "Portfolio Email",
-                        From("sangam.portfolio@demomailtrap.com", "Portfolio Mail"),
+                        "Portfolio Email Mobile",
+                        From("sangam.portfolio@demomailtrap.com", "Portfolio Mobile Sangam Garg"),
                         nameText,
                         text,
                         listOf(To("sangamgarg17@gmail.com"))
