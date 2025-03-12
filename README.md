@@ -4,6 +4,9 @@ Welcome to the repository for Sangam Garg's Android Portfolio Application. This 
 Google Play Store Download Link:-
 https://play.google.com/store/apps/details?id=com.sangam.sangamportfolio
 
+Screenshot:
+![Portfolio](https://github.com/SangamGarg/SangamGarg/blob/f3d8a5ffdb465bc399432219cafabe2bcf8b74f2/portfolio.png)
+
 
 Features
 Comprehensive Overview: Detailed information about my skills, experiences, and projects.
