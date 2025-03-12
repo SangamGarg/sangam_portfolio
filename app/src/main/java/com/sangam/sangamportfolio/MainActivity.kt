@@ -25,6 +25,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         HideStatusBarUtil.hideStatusBar(this)
+
+
+        binding.imageViewCoffee?.setOnClickListener {
+            val appPackageName = "app.buymeacoffee"
+            val webUrl = "https://buymeacoffee.com/sangamgarg"
+            openIntentWeb(appPackageName, webUrl)
+        }
+
+        binding.websiteLayout?.setOnClickListener {
+            val webUrl = "https://sangamgarg.in"
+            openIntentWeb("appPackageName", webUrl)
+        }
+
+
         binding.cvLayout.image.setImageResource(R.drawable.cv)
         binding.cvLayout.textName.text = "CV"
         binding.cvLayout.cardLayout.setOnClickListener {

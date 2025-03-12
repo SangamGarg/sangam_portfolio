@@ -29,5 +29,6 @@ Utilized modern Android technologies like MVVM, Retrofit, Kotlin Coroutines, and
 
     </b></string>
     <string name="isg">"This Android application is designed to streamline the process of booking seats in libraries and gyms, providing users with a convenient and efficient way to manage their reservations. Users can effortlessly book seats, view their upcoming and past schedules, and make secure payments directly through the app. Additionally, the app includes a QR code scanning feature for quick check-ins at gyms and libraries."</string>
+    <string name="android_developer_nkotlin_java_spring_boot">Android Developer\nKotlin, Java, Spring Boot</string>
 
 </resources>
