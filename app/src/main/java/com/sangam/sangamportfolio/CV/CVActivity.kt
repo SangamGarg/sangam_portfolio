@@ -56,7 +56,7 @@ class CVActivity : AppCompatActivity() {
                 imageView.setOnClickListener {
                     downloadImage2(
                         this,
-                        "https://firebasestorage.googleapis.com/v0/b/sangamportfolio-60a25.appspot.com/o/SANGAMCV.pdf?alt=media&token=33f3cf19-3a24-4aff-8129-688bf3f93929",
+                        "https://firebasestorage.googleapis.com/v0/b/sangamportfolio-60a25.appspot.com/o/SANGAMCV.pdf?alt=media&token=fa29ab21-dbc2-4d20-8819-2481af9100d8",
                         "Sangam CV"
                     )
                 }
@@ -70,7 +70,7 @@ class CVActivity : AppCompatActivity() {
 
                     downloadImage(
                         this,
-                        "https://firebasestorage.googleapis.com/v0/b/sangamportfolio-60a25.appspot.com/o/SangamResumeAndroid.pdf?alt=media&token=bc68000f-90da-4fa7-9b3e-39f4b74b00af",
+                        "https://firebasestorage.googleapis.com/v0/b/sangamportfolio-60a25.appspot.com/o/SangamResumeAndroid.pdf?alt=media&token=ac5b22a6-6b3e-4dc8-b310-8f9f9e0d9843",
                         "Sangam Resume"
                     )
                 }
