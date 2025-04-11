@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 class RetrofitUtilClass {
     companion object {
         private lateinit var retrofit3: Retrofit
-        private const val EMAIL_URL = "https://send.api.mailtrap.io/"
+        private const val EMAIL_URL = "https://www.sangamgarg.in/"
 
         fun getRetrofitEmail(): Retrofit {
             if (!Companion::retrofit3.isInitialized) {

@@ -18,7 +18,7 @@ class EmailRepository {
         val call = client.callEmailApi(emailRequestModel)
         call.enqueue(object : Callback<EmailResponseModel?> {
             override fun onResponse(
-                call: Call<EmailResponseModel?>, response: Response<EmailResponseModel?>
+                call: Call<EmailResponseModel?>, response: Response<EmailResponseModel?>,
             ) {
                 showProgress.postValue(false)
                 val body = response.body()

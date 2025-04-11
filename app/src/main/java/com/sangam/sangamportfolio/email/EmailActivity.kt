@@ -52,25 +52,13 @@ class EmailActivity : AppCompatActivity() {
             } else if (messageText.trim().isEmpty()) {
                 binding.messageEt.error = "Empty Field"
             } else {
-                val text = """
-                    Name        : $nameText
-                    Sender Mail : $senderEmail
-                    Message     : $messageText
-                """.trimIndent()
-
-
-
                 HideKeyboard.hideKeyboard(this, binding.messageEt.windowToken)
                 HideKeyboard.hideKeyboard(this, binding.mailEt.windowToken)
                 HideKeyboard.hideKeyboard(this, binding.nameEt.windowToken)
 
                 callSendEmail(
                     EmailRequestModel(
-                        "Portfolio Email Mobile",
-                        From("sangam.portfolio@demomailtrap.com", "Portfolio Mobile Sangam Garg"),
-                        nameText,
-                        text,
-                        listOf(To("sangamgarg17@gmail.com"))
+                        nameText, senderEmail, "Portfolio Mobile Email", messageText
                     )
                 )
             }
