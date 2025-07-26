@@ -23,7 +23,7 @@
             android:name=".email.EmailActivity"
             android:exported="false" />
         <activity
-            android:name=".CV.CVActivity"
+            android:name=".cV.CVActivity"
             android:exported="false"
             android:theme="@style/FullScreenTheme">
             <meta-data

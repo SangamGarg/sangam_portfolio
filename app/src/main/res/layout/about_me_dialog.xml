@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -9,26 +10,51 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical">
-        <TextView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/aref_ruqaa"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
             android:layout_marginBottom="15dp"
-            android:text="About Me"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/aref_ruqaa"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="About Me"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewClose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/baseline_close_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/textViewAbout_me"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:justificationMode="inter_word"
             android:fontFamily="@font/aref_ruqaa"
-            android:textColor="@color/black"
             android:gravity="center"
+            android:justificationMode="inter_word"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 

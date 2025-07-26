@@ -4,10 +4,12 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.sangam.sangamportfolio.CV.CVActivity
+import com.sangam.sangamportfolio.cV.CVActivity
 import com.sangam.sangamportfolio.app_utils.HideStatusBarUtil
 import com.sangam.sangamportfolio.app_utils.IntentUtil
 import com.sangam.sangamportfolio.certificate.ShowCertificateActivity
@@ -17,6 +19,7 @@ import com.sangam.sangamportfolio.projects.AndroidActivity
 import com.sangam.sangamportfolio.projects.FlutterActivity
 import com.sangam.sangamportfolio.projects.MernActivity
 import com.sangam.sangamportfolio.work_experience.WorkExperienceActivity
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -155,18 +158,28 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "SWIPE TO SEE MORE", Toast.LENGTH_LONG).show()
         }
         binding.more.setOnClickListener {
-            val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+            val dialogBuilder = androidx.appcompat.app.AlertDialog.Builder(this)
             val view = layoutInflater.inflate(R.layout.about_me_dialog, null)
-            dialog.setView(view)
+            dialogBuilder.setView(view)
+
+            val alertDialog = dialogBuilder.create()
+            alertDialog.show()
+
             val about = view.findViewById<TextView>(R.id.textViewAbout_me)
             about.text = getText(R.string.about_me)
-            dialog.create().show()
+
+            val close = view.findViewById<ImageView>(R.id.imageViewClose)
+            close.setOnClickListener {
+                alertDialog.dismiss()
+                Log.d("TAGGED", "Close: Clicked")
+            }
         }
+
 
         binding.phone.setOnClickListener {
             val phoneNumber = "tel:7210581614"
             val callIntent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse(phoneNumber)
+                data = phoneNumber.toUri()
             }
             startActivity(callIntent)
         }

@@ -1,4 +1,4 @@
-package com.sangam.sangamportfolio.Firebase
+package com.sangam.sangamportfolio.firebase
 
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore

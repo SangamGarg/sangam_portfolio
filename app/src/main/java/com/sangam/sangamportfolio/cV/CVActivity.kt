@@ -1,10 +1,9 @@
-package com.sangam.sangamportfolio.CV
+package com.sangam.sangamportfolio.cV
 
 import android.app.Activity
 import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -16,13 +15,9 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.sangam.sangamportfolio.R
 import com.sangam.sangamportfolio.RawResourcesBitmapProvider
-import com.sangam.sangamportfolio.app_utils.DownloadFile
 import com.sangam.sangamportfolio.app_utils.HideStatusBarUtil
 import com.shevelev.page_turning_lib.page_curling.CurlView
 import com.shevelev.page_turning_lib.page_curling.CurlViewEventsHandler
