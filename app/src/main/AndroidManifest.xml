@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SangamPortfolio"
         tools:targetApi="31">
         <activity
+            android:name=".projects.SpringActivity"
+            android:exported="false" />
+        <activity
             android:name=".work_experience.WorkExperienceActivity"
             android:exported="false" />
         <activity

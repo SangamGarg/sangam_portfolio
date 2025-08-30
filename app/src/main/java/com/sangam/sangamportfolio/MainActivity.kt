@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         HideStatusBarUtil.hideStatusBar(this)
@@ -114,6 +115,17 @@ class MainActivity : AppCompatActivity() {
             }
             textName.text = "ANDROID"
         }
+
+//
+//        binding.springLayout?.apply {
+//            image.setImageResource(R.drawable.springboot)
+//            cardLayout.setOnClickListener {
+//                IntentUtil.startIntent(this@MainActivity, AndroidActivity())
+//            }
+//            textName.text = "SPRING"
+//        }
+
+
 
         binding.flutterLayout.apply {
             image.setImageResource(R.drawable.flutter)
