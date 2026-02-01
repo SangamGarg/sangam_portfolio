@@ -42,6 +42,21 @@
             android:orientation="vertical">
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/tcs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:paddingBottom="15dp"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:gravity="center"
+                android:shadowColor="@color/color1"
+                android:shadowRadius="50"
+                android:text="Java Developer @Tata Consultancy Services"
+                android:textAllCaps="false"
+                app:rippleColor="@color/color2" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                 android:id="@+id/androidIntern"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

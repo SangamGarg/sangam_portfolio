@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         HideStatusBarUtil.hideStatusBar(this)
@@ -57,9 +58,17 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.internLayout.apply {
-            image.setImageResource(R.drawable.internship)
-            textName.text = "Internships"
+//        binding.internLayout.apply {
+//            image.setImageResource(R.drawable.internship)
+//            textName.text = "Internships"
+//            cardLayout.setOnClickListener {
+//                IntentUtil.startIntent(this@MainActivity, WorkExperienceActivity())
+//            }
+//        }
+
+        binding.professionalLayout.apply {
+            image.setImageResource(R.drawable.professional)
+            textName.text = "Experience"
             cardLayout.setOnClickListener {
                 IntentUtil.startIntent(this@MainActivity, WorkExperienceActivity())
             }

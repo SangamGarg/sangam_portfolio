@@ -46,7 +46,7 @@
             android:layout_marginTop="5dp"
             android:fontFamily="@font/cabin"
             android:gravity="center"
-            android:text="Android Developer\nKotlin, Java, Spring Boot"
+            android:text="@string/java_developer_nkotlin_java_spring_boot"
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +180,7 @@
 
 
                 <include
-                    android:id="@+id/internLayout"
+                    android:id="@+id/professionalLayout"
                     layout="@layout/card_view_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

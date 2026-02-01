@@ -65,7 +65,7 @@ class CVActivity : AppCompatActivity() {
 
                     downloadImage(
                         this,
-                        "https://firebasestorage.googleapis.com/v0/b/sangamportfolio-60a25.appspot.com/o/SangamResumeAndroid.pdf?alt=media&token=d9d72a8d-c15b-416a-8e72-84f02032cb38",
+                        "https://firebasestorage.googleapis.com/v0/b/sangamportfolio-60a25.appspot.com/o/SangamGargResume.pdf?alt=media&token=acef58e6-648b-49cf-95fe-df2148845b5d",
                         "Sangam Resume"
                     )
                 }

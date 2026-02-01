@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.sangam.sangamportfolio.R
 import com.sangam.sangamportfolio.databinding.ActivityAndroidBinding
+import androidx.core.net.toUri
 
 class AndroidActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -85,7 +86,7 @@ class AndroidActivity : AppCompatActivity() {
         certificate.setOnClickListener {
             alert.dismiss()
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(string)
+            intent.data = string.toUri()
             startActivity(intent)
         }
         alert.show()

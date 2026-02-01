@@ -27,6 +27,12 @@ class WorkExperienceActivity : AppCompatActivity() {
                 R.drawable.androidinterntalentitan
             )
         }
+        binding.tcs.setOnClickListener {
+            dialogBox(
+                getString(R.string.tcs),
+                R.drawable.tcs
+            )
+        }
     }
 
     fun dialogBox(msg: String, imageSource: Int) {
